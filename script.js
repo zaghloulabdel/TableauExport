@@ -3,15 +3,24 @@ document.addEventListener("DOMContentLoaded", function () {
         console.log("Extension Tableau initialisée !");
 
         document.getElementById("export-btn").addEventListener("click", () => {
-            // Export en cours
-            exportToCSV();
+            const sheetName = document.getElementById("sheet-name").value;
+            if (sheetName) {
+                exportToCSV(sheetName);
+            } else {
+                alert("Veuillez entrer le nom de la feuille.");
+            }
         });
     });
 });
 
-function exportToCSV() {
-    const worksheet = tableau.extensions.dashboardContent.dashboard.worksheets.find(sheet => sheet.name === 'Nom de la feuille');
-    
+function exportToCSV(sheetName) {
+    const worksheet = tableau.extensions.dashboardContent.dashboard.worksheets.find(sheet => sheet.name === sheetName);
+
+    if (!worksheet) {
+        alert(`La feuille "${sheetName}" est introuvable.`);
+        return;
+    }
+
     worksheet.getSummaryDataAsync().then(dataTable => {
         const headers = dataTable.columns.map(column => column.fieldName);
         const data = dataTable.data.map(row => row.map(cell => cell.formattedValue));
