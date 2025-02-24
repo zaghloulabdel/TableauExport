@@ -5,8 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Extension Tableau</title>
     <script src="https://tableau.github.io/extensions-api/lib/tableau-extensions-1.latest.js"></script>
-
     <script defer src="script.js"></script>
+    <style>
+        .btn {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
     <h1>Bienvenue sur mon Extension Tableau</h1>
@@ -15,8 +27,10 @@
         <p id="resultBox" class="lead">Non Initialisé</p>
         <button id="initializeButton" class="btn btn-primary">Initialiser l'API des Extensions</button>
     </div>
-    <label for="sheet-name">Nom de la feuille :</label>
-    <input type="text" id="sheet-name" placeholder="Entrez le nom de la feuille">
-    <button id="export-btn">Exporter les données</button>
+    <div>
+        <label for="sheet-name">Nom de la feuille :</label>
+        <input type="text" id="sheet-name" placeholder="Entrez le nom de la feuille">
+        <button id="export-btn" class="btn">Exporter les données</button>
+    </div>
 </body>
 </html>
