@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     tableau.extensions.initializeAsync().then(() => {
         console.log("Extension Tableau initialisée !");
-
+        
         document.getElementById("export-btn").addEventListener("click", () => {
             const sheetName = document.getElementById("sheet-name").value;
             if (sheetName) {
@@ -10,6 +10,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 alert("Veuillez entrer le nom de la feuille.");
             }
         });
+    }).catch(err => {
+        console.error("Erreur lors de l'initialisation de l'extension Tableau :", err);
     });
 });
 
@@ -39,5 +41,7 @@ function exportToCSV(sheetName) {
 
         link.click();
         document.body.removeChild(link);
+    }).catch(err => {
+        console.error("Erreur lors de la récupération des données :", err);
     });
 }
