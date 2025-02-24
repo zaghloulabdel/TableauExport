@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
         console.log("Extension Tableau initialisée !");
         
         document.getElementById("export-btn").addEventListener("click", () => {
-            alert("Export en cours !");
+            alert("Export en co urs !");
         });
     });
 });
