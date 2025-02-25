@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?> 
+  <manifest manifest-version="0.1" xmlns="http://www.tableau.com/xml/extension_manifest">
+    <dashboard-extension id="com.zaghloulbi.tableauexportcsv" extension-version="1.0.0">
+      <default-locale>fr_FR</default-locale>
+      <name resource-id="name"/>
+      <description>Une extension pour exporter des données en CSV</description>
+      <author name="ZAGHLOUL" email="zagh.ing@gmail.com" organization="Zaghloul BI Solutions" website="https://github.com/zaghloulabdel/"/>
+      <min-api-version>1.0</min-api-version>
+      <source-location>
+        <url>https://zaghloulabdel.github.io/TableauExportCSV/index.html</url> 
+      </source-location>
+      <icon></icon>
+      <permissions>
+        <permission>full data</permission>
+      </permissions>
+      <context-menu>
+        <configure-context-menu-item />
+      </context-menu>
+    </dashboard-extension>
+    <resources>
+      <resource id="name">
+        <text locale="fr_FR">Tableau Export CSV</text>
+      </resource>
+    </resources>
+  </manifest>
